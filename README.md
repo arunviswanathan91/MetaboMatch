@@ -16,6 +16,7 @@ The tool employs a tiered matching strategy to maximize annotation rates:
 -*Normalized Fuzzy*: Leverages the RapidFuzz algorithm (token_set_ratio) to score similarities for names that miss an exact match.
 
 -*Semantic Search* (Optional): Uses Hugging Face sentence embeddings to match compounds by structural/semantic meaning rather than mere character similarities.
+
 ---
 
 ## Install
