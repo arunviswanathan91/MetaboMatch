@@ -3,7 +3,19 @@
 Match metabolomics compound names against the [HMDB](https://hmdb.ca) database and annotate them with accession IDs, molecular formulas, and InChIKeys — ready for downstream multi-omics network analysis.
 
 Works in any Python environment: scripts, Jupyter notebooks, or from the command line.
+##About MetaboMatch
 
+MetaboMatch is a Python package and command-line interface (CLI) tool designed to match metabolomics compound names against the Human Metabolome Database (HMDB).
+
+It takes metabolomics tables (such as exports from Thermo Compound Discoverer or generic CSV/XLSX files) and annotates them with HMDB accession IDs, canonical names, molecular formulas, and InChIKeys. This provides a streamlined way to prepare metabolomics data for downstream multi-omics network analysis.
+
+The tool employs a tiered matching strategy to maximize annotation rates:
+
+-*Raw Exact*: Case-insensitive exact string matching against HMDB canonical names and synonyms.
+
+-*Normalized Fuzzy*: Leverages the RapidFuzz algorithm (token_set_ratio) to score similarities for names that miss an exact match.
+
+-*Semantic Search* (Optional): Uses Hugging Face sentence embeddings to match compounds by structural/semantic meaning rather than mere character similarities.
 ---
 
 ## Install
